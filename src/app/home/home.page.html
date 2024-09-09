@@ -1,22 +1,43 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Comparador de Combustível</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-row class="linha">
+    <ion-col size-sm="12" size-md="6">
+      <ion-card>
+        <ion-card-content>
+          <ion-list>
+            <ion-item>
+              <ion-label position="floating">Valor do litro da Gasolina (R$)</ion-label>
+              <ion-input type="number" [(ngModel)]="gasolina" min="0"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Valor do litro do Álcool (R$)</ion-label>
+              <ion-input type="number" [(ngModel)]="alcool" min="0"></ion-input>
+            </ion-item>
+            <ion-button expand="block" (click)="comparar()">Comparar</ion-button>
+            <ion-item>
+  <ion-label position="floating">Resultado</ion-label>
+  <ion-input [value]="resultado" readonly></ion-input>
+  </ion-item>
 
-  <div id="container">
-    <h3>Projeto com Bootstrap e Ionic!</h3>
-    <hr>
-    <p>Componentes Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components"> - UI Components</a></p>
-    <p>Componentes Bootstrap <a target="_blank" rel="noopener noreferrer" href="https://getbootstrap.com/docs/5.3/components/buttons/"> - UI Components</a></p>
-  </div>
+  <ion-item>
+    <ion-label position="floating">Razão</ion-label>
+    <ion-input [value]="razao" readonly></ion-input>
+    </ion-item>
+
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Gabriela de Oliveira</ion-title>
+  </ion-toolbar>
+</ion-footer>
