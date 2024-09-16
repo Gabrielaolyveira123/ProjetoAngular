@@ -18,11 +18,11 @@
 </ion-item>
 
 <ion-list>
-  <ion-item *ngFor = "let item of items">
+  <ion-item *ngFor = "let item of items; let posicao = index">
   <ion-label>
     {{item.titulo}}
   </ion-label>
-<ion-button color="danger" slot = "end">
+<ion-button color="danger" slot = "end" (click) = "remover(posicao)">
 <ion-icon slot="icon-only" name="trash"></ion-icon>
 </ion-button>
   </ion-item> 

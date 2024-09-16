@@ -44,4 +44,10 @@ export class HomePage {
     //limpando campo nome
     this.nome = "";
   }
+
+remover(posicao:number){
+  console.log(posicao);
+  this.items.splice(posicao, 1);
+}
+
 }
