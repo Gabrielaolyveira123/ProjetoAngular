@@ -16,11 +16,11 @@ export class HomePage {
   public razao: number | undefined;
   public resultado: string = "";
 
-  constructor(private alertCtrl: AlertController) {}
+  constructor(private alertController: AlertController) {}
 
   async comparar() {
     if (this.gasolina == null || this.alcool == null) {
-      const alert = await this.alertCtrl.create({
+      const alert = await this.alertController.create({
         header: 'Atenção',
         message: 'Por favor, preencha os dois valores',
         buttons: ['OK']
@@ -30,7 +30,7 @@ export class HomePage {
     }
 
     if (this.gasolina <= 0 || this.alcool <= 0) {
-      const alert = await this.alertCtrl.create({
+      const alert = await this.alertController.create({
         header: 'Inválido',
         message: 'Os valores devem ser maiores que zero',
         buttons: ['OK']
@@ -45,14 +45,14 @@ export class HomePage {
     }
 
    this.razao = this.alcool / this.gasolina;
-    console.log('A razão é:', this.razao);
+    //console.log('A razão é:', this.razao);
 
     if (this.razao <= 0.7) {
       this.resultado = 'Álcool é mais vantajoso';
     } else {
       this.resultado = 'Gasolina é mais vantajosa';
     }
-    console.log('Resultado:', this.resultado);
+   // console.log('Resultado:', this.resultado);
   }
 }
   
